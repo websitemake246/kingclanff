@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire King༒clan모</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff4655;
+            --secondary: #0f1923;
+            --accent: #1eb2ff;
+            --dark: #0a0e12;
+            --light: #ece8e1;
+            --gold: #ffd700;
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 70, 85, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 80%, rgba(30, 178, 255, 0.1) 0%, transparent 20%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(15, 25, 35, 0.95);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(255, 70, 85, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .logo-subtitle {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(15, 25, 35, 0.9), rgba(10, 14, 18, 0.9));
+            margin: 2rem auto;
+            max-width: 1200px;
+            border-radius: 15px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 40px rgba(255, 70, 85, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent), var(--primary));
+            animation: pulseBorder 3s infinite;
+        }
+
+        @keyframes pulseBorder {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .welcome-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--gold), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(30, 178, 255, 0.5);
+        }
+
+        .welcome-message {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            color: #c0c0c0;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Members Section */
+        .members-section {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--primary), transparent);
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 2rem;
+        }
+
+        .member-card {
+            background: rgba(15, 25, 35, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 70, 85, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(255, 70, 85, 0.2);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .member-info {
+            padding: 1.2rem;
+        }
+
+        .member-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-rank {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            padding: 3px 10px;
+            background: rgba(30, 178, 255, 0.1);
+            border-radius: 20px;
+        }
+
+        /* Admin Button */
+        .admin-btn {
+            background: linear-gradient(45deg, var(--primary), #ff2e3f);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(255, 70, 85, 0.4);
+        }
+
+        .admin-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 70, 85, 0.6);
+            background: linear-gradient(45deg, #ff2e3f, var(--primary));
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: var(--secondary);
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+            border: 2px solid var(--primary);
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(255, 70, 85, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            background: rgba(10, 14, 18, 0.9);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .modal-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(10, 14, 18, 0.8);
+            border: 1px solid rgba(255, 70, 85, 0.5);
+            border-radius: 5px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, var(--accent), #1a9edb);
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            width: 100%;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #1a9edb, var(--accent));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(30, 178, 255, 0.4);
+        }
+
+        .login-form {
+            display: block;
+        }
+
+        .admin-form {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 18, 0.95);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 2px solid var(--primary);
+        }
+
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Animation for welcome message */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .welcome-section {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .welcome-title {
+                font-size: 2.5rem;
+            }
+            
+            .welcome-message {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .admin-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-title {
+                font-size: 2rem;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <h1 class="logo">King༒clan모</h1>
+            <div class="logo-subtitle">FREE FIRE ELITE GUILD</div>
+        </div>
+        <button class="admin-btn" id="adminBtn">
+            <i class="fas fa-user-shield"></i> ADMIN LOGIN
+        </button>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <h2 class="welcome-title">WELCOME TO KING༒CLAN모</h2>
+        <p class="welcome-message">
+            We are the <span class="highlight">most elite Free Fire guild</span> competing at the highest levels. 
+            Our members are battle-hardened warriors with a passion for victory and excellence. 
+            Join us in our quest to dominate the battleground and become legends!
+        </p>
+        <p class="welcome-message">
+            Currently ranked <span class="highlight">#1 in the region</span> with over 500 tournament victories.
+            Our guild is always looking for talented players who share our competitive spirit.
+        </p>
+    </section>
+
+    <!-- Members Section -->
+    <section class="members-section">
+        <h3 class="section-title">GUILD MEMBERS</h3>
+        <div class="members-grid" id="membersGrid">
+            <!-- Members will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Admin Modal -->
+    <div class="modal-overlay" id="adminModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">ADMIN LOGIN</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Login Form -->
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label class="form-label" for="adminPassword">ADMIN PASSWORD</label>
+                        <input type="password" id="adminPassword" class="form-input" placeholder="Enter admin password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">LOGIN</button>
+                    <p style="text-align: center; margin-top: 15px; color: #aaa; font-size: 0.9rem;">
+                        Default password: <strong>kingclan2023</strong>
+                    </p>
+                </form>
+
+                <!-- Admin Form (for adding members) -->
+                <form class="admin-form" id="adminForm">
+                    <div class="form-group">
+                        <label class="form-label" for="memberName">MEMBER NAME</label>
+                        <input type="text" id="memberName" class="form-input" placeholder="Enter member name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="memberImage">IMAGE URL</label>
+                        <input type="text" id="memberImage" class="form-input" placeholder="Enter image URL" required>
+                        <p style="font-size: 0.8rem; color: #aaa; margin-top: 5px;">
+                            You can use image URLs from the internet or upload to an image hosting service
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="memberRank">MEMBER RANK</label>
+                        <select id="memberRank" class="form-input" required>
+                            <option value="">Select rank</option>
+                            <option value="Guild Master">Guild Master</option>
+                            <option value="Elite Warrior">Elite Warrior</option>
+                            <option value="Senior Member">Senior Member</option>
+                            <option value="Member">Member</option>
+                            <option value="Recruit">Recruit</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">ADD MEMBER</button>
+                    <button type="button" class="submit-btn" id="logoutBtn" style="background: linear-gradient(45deg, #ff4655, #ff2e3f); margin-top: 10px;">
+                        LOGOUT
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">King༒clan모</div>
+        <p class="copyright">© 2023 Free Fire King༒clan모 Guild. All rights reserved.</p>
+        <p class="copyright">This is a fan-made website for the Free Fire guild. Free Fire is a registered trademark of Garena.</p>
+    </footer>
+
+    <script>
+        // Sample initial members data
+        const initialMembers = [
+            { name: "Shadow༒Assassin", image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", rank: "Guild Master" },
+            { name: "Dragon༒Warrior", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", rank: "Elite Warrior" },
+            { name: "Phantom༒Sniper", image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80", rank: "Senior Member" },
+            { name: "Blaze༒Storm", image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", rank: "Senior Member" },
+            { name: "Venom༒Striker", image: "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", rank: "Member" },
+            { name: "Frost༒Wraith", image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1228&q=80", rank: "Member" }
+        ];
+
+        // DOM Elements
+        const adminBtn = document.getElementById('adminBtn');
+        const adminModal = document.getElementById('adminModal');
+        const closeModal = document.getElementById('closeModal');
+        const loginForm = document.getElementById('loginForm');
+        const adminForm = document.getElementById('adminForm');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const modalTitle = document.getElementById('modalTitle');
+        const membersGrid = document.getElementById('membersGrid');
+        
+        // State
+        let isAdminLoggedIn = false;
+        let members = JSON.parse(localStorage.getItem('kingClanMembers')) || initialMembers;
+
+        // Initialize the page
+        function init() {
+            renderMembers();
+            
+            // Check if admin is already logged in from previous session
+            if (localStorage.getItem('kingClanAdminLoggedIn') === 'true') {
+                isAdminLoggedIn = true;
+                updateAdminButton();
+            }
+        }
+
+        // Render members to the page
+        function renderMembers() {
+            membersGrid.innerHTML = '';
+            
+            members.forEach(member => {
+                const memberCard = document.createElement('div');
+                memberCard.className = 'member-card';
+                memberCard.innerHTML = `
+                    <img src="${member.image}" alt="${member.name}" class="member-image">
+                    <div class="member-info">
+                        <h4 class="member-name">${member.name}</h4>
+                        <span class="member-rank">${member.rank}</span>
+                    </div>
+                `;
+                membersGrid.appendChild(memberCard);
+            });
+        }
+
+        // Update admin button based on login state
+        function updateAdminButton() {
+            if (isAdminLoggedIn) {
+                adminBtn.innerHTML = '<i class="fas fa-user-cog"></i> ADMIN PANEL';
+                adminBtn.style.background = 'linear-gradient(45deg, var(--accent), #1a9edb)';
+            } else {
+                adminBtn.innerHTML = '<i class="fas fa-user-shield"></i> ADMIN LOGIN';
+                adminBtn.style.background = 'linear-gradient(45deg, var(--primary), #ff2e3f)';
+            }
+        }
+
+        // Show modal
+        function showModal() {
+            adminModal.classList.add('active');
+            
+            if (isAdminLoggedIn) {
+                // Show admin form
+                loginForm.style.display = 'none';
+                adminForm.style.display = 'block';
+                modalTitle.textContent = 'ADD NEW MEMBER';
+            } else {
+                // Show login form
+                loginForm.style.display = 'block';
+                adminForm.style.display = 'none';
+                modalTitle.textContent = 'ADMIN LOGIN';
+            }
+        }
+
+        // Hide modal
+        function hideModal() {
+            adminModal.classList.remove('active');
+        }
+
+        // Login function
+        function login(password) {
+            // Default password (in a real app, this would be handled server-side)
+            const correctPassword = 'kingclan2023';
+            
+            if (password === correctPassword) {
+                isAdminLoggedIn = true;
+                localStorage.setItem('kingClanAdminLoggedIn', 'true');
+                updateAdminButton();
+                showModal();
+                return true;
+            } else {
+                alert('Incorrect password! Try "kingclan2023"');
+                return false;
+            }
+        }
+
+        // Logout function
+        function logout() {
+            isAdminLoggedIn = false;
+            localStorage.removeItem('kingClanAdminLoggedIn');
+            updateAdminButton();
+            hideModal();
+        }
+
+        // Add new member
+        function addMember(name, image, rank) {
+            const newMember = {
+                name: name,
+                image: image,
+                rank: rank
+            };
+            
+            members.push(newMember);
+            localStorage.setItem('kingClanMembers', JSON.stringify(members));
+            renderMembers();
+            
+            // Reset form
+            document.getElementById('memberName').value = '';
+            document.getElementById('memberImage').value = '';
+            document.getElementById('memberRank').value = '';
+            
+            alert(`Member ${name} added successfully!`);
+        }
+
+        // Event Listeners
+        adminBtn.addEventListener('click', showModal);
+        
+        closeModal.addEventListener('click', hideModal);
+        
+        // Close modal when clicking outside
+        adminModal.addEventListener('click', (e) => {
+            if (e.target === adminModal) {
+                hideModal();
+            }
+        });
+        
+        // Login form submission
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const password = document.getElementById('adminPassword').value;
+            if (login(password)) {
+                document.getElementById('adminPassword').value = '';
+            }
+        });
+        
+        // Admin form submission (add member)
+        adminForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('memberName').value;
+            const image = document.getElementById('memberImage').value;
+            const rank = document.getElementById('memberRank').value;
+            
+            addMember(name, image, rank);
+        });
+        
+        // Logout button
+        logoutBtn.addEventListener('click', logout);
+
+        // Initialize the page
+        init();
+
+        // Add some cool visual effects
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add particles effect to welcome section
+            const welcomeSection = document.querySelector('.welcome-section');
+            
+            // Create particles
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = i % 2 === 0 ? 'var(--primary)' : 'var(--accent)';
+                particle.style.borderRadius = '50%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.opacity = Math.random() * 0.5 + 0.2;
+                particle.style.zIndex = '-1';
+                welcomeSection.appendChild(particle);
+                
+                // Animate particle
+                animateParticle(particle);
+            }
+            
+            function animateParticle(particle) {
+                let x = parseFloat(particle.style.left);
+                let y = parseFloat(particle.style.top);
+                let xSpeed = (Math.random() - 0.5) * 0.5;
+                let ySpeed = (Math.random() - 0.5) * 0.5;
+                
+                function move() {
+                    x += xSpeed;
+                    y += ySpeed;
+                    
+                    // Bounce off edges
+                    if (x <= 0 || x >= 100) xSpeed *= -1;
+                    if (y <= 0 || y >= 100) ySpeed *= -1;
+                    
+                    // Keep within bounds
+                    x = Math.max(0, Math.min(100, x));
+                    y = Math.max(0, Math.min(100, y));
+                    
+                    particle.style.left = x + '%';
+                    particle.style.top = y + '%';
+                    
+                    requestAnimationFrame(move);
+                }
+                
+                move();
+            }
+        });
+    </script>
+</body>
+</html>
